@@ -1,0 +1,13 @@
+---
+resources:
+- name: resource-scripts
+    type: git
+    source:
+      uri: https://github.com/tom-collings/asg-job.git
+
+jobs:
+  - name: job-create-asg
+    plan:
+    - get: resource-scripts
+    - task: create-asg
+      file: resource-scripts/tasks/create-asg/task.yml
