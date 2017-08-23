@@ -4,7 +4,12 @@ set -eu
 
 echo "Hello Concourse World"
 
-cf api $CF_API_ENDPOINT $SKIP_SSL_VALIDATION
+if [ $SKIP_SSL_VALIDATION == "true" ];
+  then
+    cf api $CF_API_ENDPOINT --skip-ssl-validation
+  else
+    cf api $CF_API_ENDPOINT
+fi
 
 cf auth $CF_USERNAME $CF_PASSWORD
 
