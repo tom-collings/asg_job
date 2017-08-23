@@ -10,4 +10,4 @@ inputs:
 - name: resource-scripts
 
 run:
-  path: resource-scripts/tasks/create-asg.sh
+  path: resource-scripts/tasks/create-asg/task.sh
