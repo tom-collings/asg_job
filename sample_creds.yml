@@ -1,0 +1,36 @@
+github-private-key: |
+  -----BEGIN RSA PRIVATE KEY-----
+  MIIJJwIBAAKCAgEA0qL7cTxQ1N6xtWbFYhTAJC5UaMAR0gW4QpQgUBBQKj+759KG
+
+  cLHL12pbR1BHE+jHw6jiB2UiwVoTat6+SI6bIzw/pxwz7FBpZlh5NvzHdw==
+  -----END RSA PRIVATE KEY-----
+cf-api-endpoint: https://api.system.tcollings.os.pez.pcfs.solutions
+skip-ssl-validation: true
+cf-username: admin
+cf-password: password
+cf-org: tom
+cf-space: asg-test
+running-security-group-name: test-running-group
+running-security-group-value: |
+  [
+    {
+      "destination": "0.0.0.0-169.253.255.255",
+      "protocol": "all"
+    },
+    {
+      "destination": "169.255.0.0-255.255.255.255",
+      "protocol": "all"
+    }
+  ]
+staging-security-group-name: test-staging-group
+staging-security-group-value: |
+  [
+    {
+      "destination": "0.0.0.0-169.253.255.255",
+      "protocol": "all"
+    },
+    {
+      "destination": "169.255.0.0-255.255.255.255",
+      "protocol": "all"
+    }
+  ]

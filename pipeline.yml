@@ -21,6 +21,22 @@ jobs:
       CF_PASSWORD: {{cf-password}}
       CF_ORG: {{cf-org}}
       CF_SPACE: {{cf-space}}
-      SECURITY_GROUP_NAME: {{security-group-name}}
-      SECURITY_GROUP_VALUE: {{security-group-value}}
+      SECURITY_GROUP_NAME: {{running-security-group-name}}
+      SECURITY_GROUP_VALUE: {{running-security-group-value}}
       PHASE: running
+
+- name: job-create-asg-staging
+  plan:
+  - get: resource-scripts
+  - task: create-asg
+    file: resource-scripts/tasks/create-asg/task.yml
+    params:
+      CF_API_ENDPOINT: {{cf-api-endpoint}}
+      SKIP_SSL_VALIDATION: {{skip-ssl-validation}}
+      CF_USERNAME: {{cf-username}}
+      CF_PASSWORD: {{cf-password}}
+      CF_ORG: {{cf-org}}
+      CF_SPACE: {{cf-space}}
+      SECURITY_GROUP_NAME: {{staging-security-group-name}}
+      SECURITY_GROUP_VALUE: {{staging-security-group-value}}
+      PHASE: staging
