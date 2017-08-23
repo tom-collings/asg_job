@@ -9,5 +9,13 @@ image_resource:
 inputs:
 - name: resource-scripts
 
+params:
+  CF_API_ENDPOINT:
+  SKIP_SSL_VALIDATION:
+  CF_USERNAME:
+  CF_PASSWORD:
+  CF_ORG:
+  CF_SPACE: 
+
 run:
   path: resource-scripts/tasks/create-asg/task.sh

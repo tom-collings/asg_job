@@ -14,3 +14,10 @@ jobs:
   - get: resource-scripts
   - task: create-asg
     file: resource-scripts/tasks/create-asg/task.yml
+    params:
+      CF_API_ENDPOINT: {{cf-api-endpoint}}
+      SKIP_SSL_VALIDATION: {{skip-ssl-validation}}
+      CF_USERNAME: {{cf-username}}
+      CF_PASSWORD: {{cf-password}}
+      CF_ORG: {{cf-org}}
+      CF_SPACE: {{cf-space}}
