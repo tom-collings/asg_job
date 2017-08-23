@@ -17,7 +17,8 @@ params:
   CF_ORG:
   CF_SPACE:
   SECURITY_GROUP_NAME:
-  SECURITY_GROUP_VALUE: 
+  SECURITY_GROUP_VALUE:
+  PHASE:
 
 run:
   path: resource-scripts/tasks/create-asg/task.sh

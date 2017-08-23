@@ -28,4 +28,14 @@ if [ $secgroupcount -eq 0 ];
     cf update-security-group $SECURITY_GROUP_NAME /tmp/sec.json
 fi
 
+boundcount=$(cf security-groups | grep $SECURITY_GROUP_NAME | grep $CF_ORG | grep $CF_SPACE | grep $PHASE | wc -l)
+
+if [ $boundcount -eq 0 ];
+  then
+    echo "need to bind security group to org/space"
+    cf bind-security-group $SECURITY_GROUP_NAME $CF_ORG $CF_SPACE --lifecycle $PHASE
+  else
+    echo "security group already bound to org/space"
+fi
+
 rm -rf /tmp/sec.json
