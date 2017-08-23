@@ -3,3 +3,5 @@
 set -eu
 
 echo "Hello Concourse World"
+
+cf api
