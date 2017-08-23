@@ -15,7 +15,9 @@ params:
   CF_USERNAME:
   CF_PASSWORD:
   CF_ORG:
-  CF_SPACE: 
+  CF_SPACE:
+  SECURITY_GROUP_NAME:
+  SECURITY_GROUP_VALUE: 
 
 run:
   path: resource-scripts/tasks/create-asg/task.sh
